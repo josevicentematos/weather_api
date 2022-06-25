@@ -31,3 +31,10 @@ class WeatherApiTests(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['location_name'], 'Bogota, CO')
+
+    def test_api_query_string_wrong_values(self):
+        url = reverse('api:weather_query_string') + \
+            '?city=invalid_country&country=invalid_country'
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
