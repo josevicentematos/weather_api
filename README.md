@@ -21,9 +21,11 @@ python manage.py runserver
 
 ## Cómo usar
 
-Para consultar la API se debe hacer una petición GET desde el explorador o alguna herramienta como Postman a la siguiente URL:
+Para consultar la API se debe hacer una petición GET desde el explorador o alguna herramienta como Postman de las siguientes formas:
 ```sh
 127.0.0.1:8000/weather/bogota/co
+
+127.0.0.1:8000/weather?city=bogota&country=co
 ```
 Los parametros *bogota* y *co* pueden ser reemplazados con el nombre y codigo (o nombre) de otra ciudad como por ejemplo: *montevideo* y *uruguay*.
 
